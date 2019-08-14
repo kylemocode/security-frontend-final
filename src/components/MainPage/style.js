@@ -23,9 +23,7 @@ export const Container = styled.div`
     margin: 0;
     padding: 0;
 `
-// flex-direction: column;
-// justify-content: center;
-// align-items: center;
+
 export const FormContainer = styled.div`
     flex: 1;
     background-color: rgba(0,0,0,0.5);
@@ -68,9 +66,28 @@ export const LoginButton = styled.button`
     padding: 5px 10px;
     margin-top: 20px;
     transition: 0.3s;
-
+    display: flex;
+    justify-content: center;
+    outline: none;
     :hover {
         background-color: #bf3026;
     }
+    :focus {
+        outline: none;
+    }
+`
+
+export const ButtonLogin = styled.div`
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #3498db; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
 `
 

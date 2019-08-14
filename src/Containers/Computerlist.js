@@ -3,6 +3,7 @@ import axios from 'axios';
 import Table from '../components/Table/index';
 import Loader from '../components/Loader/index';
 import Navbar from '../components/Navbar';
+import PieChart from '../components/PieChart/index.js';
 
 const Computerlist  = () =>  {
     
@@ -32,6 +33,7 @@ const Computerlist  = () =>  {
             ) : <div style={containerStyle}>
                     <Navbar />
                     <Loader />
+                    <PieChart />
                 </div>
         )
     

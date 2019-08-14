@@ -16,7 +16,7 @@ export const NavbarContainer = styled.div`
 `
 // radial-gradient( circle 484px at 49.4% 19%,  rgba(23,156,214,1) 0%, rgba(52,48,111,1) 100.2% )
 export const NavbarImage = styled.img`
-    width: ${props => props.imgWidth ? props.imgWidth : "50px"};
+    width: ${props => props.imgWidth ? props.imgWidth : "48px"};
     height: ${props => props.imgHeight ? props.imgHeight : "50px"};
     margin-right: 10px;
     margin-left: 30px; 
