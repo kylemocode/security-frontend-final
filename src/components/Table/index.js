@@ -14,7 +14,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import TableHead from '@material-ui/core/TableHead';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const useStyles1 = makeStyles(theme => ({
   root: {
@@ -116,7 +116,7 @@ export default function CustomPaginationActionsTable(props) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   }
-  console.log(props.data)
+  
   
   return (
     <Paper className={classes.root}>
@@ -135,7 +135,9 @@ export default function CustomPaginationActionsTable(props) {
               <TableRow key={i}>
                 
                     <TableCell component="th" scope="row">
-                        <a style={{cursor:"pointer",textDecoration:"underline"}}>{row[props.apiKey[0]]}</a>
+                      <Link to={`/scanningHistory/${row[props.apiKey[0]]}`}>
+                        <a style={{cursor:"pointer",textDecoration:"underline",fontSize:'18px'}}>{row[props.apiKey[0]]}</a>
+                      </Link>
                     </TableCell>
                 
                 

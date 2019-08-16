@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react';
-import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
+import { Router,Route,Switch } from 'react-router-dom';
 import ComputerList from '../Containers/Computerlist';
+import ScanningHistory from '../Containers/ScanningHistory';
 import MainPage from '../Containers/MainPage';
 import createHistory from 'history/createBrowserHistory';
 
@@ -14,6 +15,7 @@ const AppRouter = () => {
                 <Switch>
                     <Route path="/" exact component={MainPage}/>
                     <Route path="/computerlist" exact component={ComputerList}/>
+                    <Route path="/scanningHistory/:id"  component={ScanningHistory}/>
                 </Switch>
             </Fragment>
         </Router>

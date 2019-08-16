@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { AUTH_START,AUTH_SUCCESS,AUTH_FAIL,AUTH_LOGOUT } from './ActionTypes';
+import { history } from '../routers/AppRouter';
 
 export const authStart = () => {
     return {
@@ -35,13 +36,19 @@ export const authLogin = (username, password) => {
         axios.post('http://127.0.0.1:8000/auth/token/login',{
             username,
             password
-        }) 
+          }
+    )
         .then(res => {
-            const token = res.auth_token;
+            console.log('login successfully');
+            const token = res.data.auth_token;
             localStorage.setItem('token',token);
             dispatch(authSuccess(token));
+            history.push('/computerlist');
         })
-        .catch(err => dispatch(authFail(err)))
+        .catch(err => {
+            dispatch(authFail(err));
+            history.push('/');
+        })
     }
 }
 
