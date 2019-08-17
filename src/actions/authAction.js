@@ -39,7 +39,6 @@ export const authLogin = (username, password) => {
           }
     )
         .then(res => {
-            console.log('login successfully');
             const token = res.data.auth_token;
             localStorage.setItem('token',token);
             dispatch(authSuccess(token));

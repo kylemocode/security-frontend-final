@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardContainer, CompanyInfo, CompanyText, CompanyLogo, TotalScoreContainer, TotalScoreImg, TotalScoreInfo, StatusIcon } from './style';
+import PropTypes from 'prop-types';
 
 const CompanyCard = (props) => {
 
@@ -32,20 +33,25 @@ const CompanyCard = (props) => {
                 <TotalScoreInfo>
                     <div style={flexCenterStyle}>
                         <StatusIcon bgc="#55ed6c"/>
-                        <p style={statusCountStyle}>安全狀態電腦數量: 2</p>
+                        <p style={statusCountStyle}>安全狀態電腦數量: {props.statusNum.safeStatusNum}</p>
                     </div>
                     <div style={flexCenterStyle}>
                         <StatusIcon bgc="#f0a33e"/>
-                        <p style={statusCountStyle}>警告狀態電腦數量: 2</p>
+                        <p style={statusCountStyle}>警告狀態電腦數量: {props.statusNum.warningStatusNum}</p>
                     </div>
                     <div style={flexCenterStyle}>
                         <StatusIcon bgc="#de351f"/>
-                        <p style={statusCountStyle}>危險狀態電腦數量: 2</p>
+                        <p style={statusCountStyle}>危險狀態電腦數量: {props.statusNum.dangerousStatusNum}</p>
                     </div>
                 </TotalScoreInfo>
             </TotalScoreContainer>
         </CardContainer>
     )
+}
+
+CompanyCard.propTypes = {
+    statusNum: PropTypes.object,
+    computerNum: PropTypes.number
 }
 
 export default CompanyCard;

@@ -20,7 +20,7 @@ export const CardContainer = styled.div`
 export const CompanyInfo = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 `
 
@@ -28,6 +28,7 @@ export const CompanyText = styled.div`
     width: 50%
     font-family:'微軟正黑體';
     white-space: pre;
+    word-break: break-all;
 `
 
 export const CompanyLogo = styled.img`

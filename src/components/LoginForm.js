@@ -37,8 +37,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         dispatch(authLogin(props.values.username,props.values.password));
     }
-    console.log('token',token)
-    console.log('error',error)
+    
     return (
         <Form onSubmit={(e) => handleSubmit(e)}>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',height:'100vh'}}>

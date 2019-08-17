@@ -16,6 +16,7 @@ import LastPageIcon from '@material-ui/icons/LastPage';
 import TableHead from '@material-ui/core/TableHead';
 import { NavLink, Link } from 'react-router-dom';
 
+
 const useStyles1 = makeStyles(theme => ({
   root: {
     flexShrink: 0,
@@ -101,7 +102,7 @@ const useStyles2 = makeStyles(theme => ({
   },
 }));
 
-export default function CustomPaginationActionsTable(props) {
+function CustomPaginationActionsTable(props) {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -176,3 +177,12 @@ export default function CustomPaginationActionsTable(props) {
     </Paper>
   );
 }
+
+CustomPaginationActionsTable.propTypes = {
+  data: PropTypes.array,
+  tableMain: PropTypes.string,
+  tableTitle: PropTypes.array,
+  apiKey: PropTypes.array
+}
+
+export default CustomPaginationActionsTable;
