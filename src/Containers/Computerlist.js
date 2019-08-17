@@ -8,14 +8,13 @@ import CompanyCard from '../components/CompanyCard/index';
 import { history } from '../routers/AppRouter';
 
 
-let safeStatusNum = 0;
-let warningStatusNum = 0;
-let dangerousStatusNum = 0;
 
 const Computerlist  = (props) =>  {
     const [companyInfo, setCompanyInfo] = useState({});
     const [data, setData] = useState([]);
-    
+    const [safeNum, setSafeNum] = useState(0);
+    const [warningNum, setWarningNum] = useState(0);
+    const [dangerousNum, setDangerousNum] = useState(0);
     const token = localStorage.getItem('token');
     useEffect(() => {
         document.body.style.backgroundColor = "#FAFAFA";
@@ -30,13 +29,13 @@ const Computerlist  = (props) =>  {
                 res.data[1].forEach((computer) => {
                     switch(computer.last_scan_status) {
                         case 'Safe':
-                            safeStatusNum += 1;
+                            setSafeNum(safeNum+1);
                             break;
                         case 'Warning':
-                            warningStatusNum += 1;
+                            setWarningNum(warningNum+1);
                             break;
                         case 'Dangerous':
-                            dangerousStatusNum += 1;
+                            setDangerousNum(dangerousNum+1);
                             break;
                     }
                 })
@@ -56,7 +55,7 @@ const Computerlist  = (props) =>  {
                     <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <CompanyCard 
                             computerNum={data.length}
-                            statusNum={{safeStatusNum,warningStatusNum,dangerousStatusNum}}
+                            statusNum={{safeNum,warningNum,dangerousNum}}
                             />
                     </div>
                     <div className="container-fluid">

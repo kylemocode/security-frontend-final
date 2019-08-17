@@ -41,12 +41,14 @@ export const TotalScoreContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -10px;
 `
 
 export const TotalScoreImg = styled.div`
-
+    width: 50%;
 `
 export const TotalScoreInfo = styled.div`
+    margin-right: 10px;
     margin-top: 15px;
     font-family: '微軟正黑體';
     font-weight: 600;

@@ -1,9 +1,9 @@
 import React,{Fragment} from 'react';
 import { Container, GlobalStyle, Title, Content, InfoContainer,FormContainer } from '../components/MainPage/style';
 import { NavbarImage } from '../components/Navbar/style';
-import ParticlesComponent from '../components/Particles';
-import FormikLogin from '../components/LoginForm';
-
+import ParticlesComponent from '../components/Particles/index';
+import FormikLogin from '../components/LoginForm/index';
+import { history } from '../routers/AppRouter';
 
 const MainPage = () => {
     return (

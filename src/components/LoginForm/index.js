@@ -1,11 +1,11 @@
 import React from 'react'
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { LoginButton,ButtonLogin } from './MainPage/style';
-import { NavbarImage } from './Navbar/style';
+import { LoginButton,ButtonLogin } from '../MainPage/style';
+import { NavbarImage } from '../Navbar/style';
 import { useDispatch, useSelector } from 'react-redux';
-import '../index.css';
-import { authLogin } from '../actions/authAction';
+import '../../index.css';
+import { authLogin } from '../../actions/authAction';
 
 
 const LoginForm = (props) => {

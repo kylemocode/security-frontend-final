@@ -3,14 +3,13 @@ import {
   PieChart, Pie, Sector, Cell,
 } from 'recharts';
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
+// const data = [
+//   { name: 'Group A', value: 1 },
+//   { name: 'Group B', value: 2 },
+//   { name: 'Group C', value: 1 }
+// ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#55ed6c', '#f0a33e', '#de351f'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -29,14 +28,22 @@ const renderCustomizedLabel = ({
 
 class PieChartComponent extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
-
+  state = {
+    data: []
+  }
+  componentDidMount() {
+    this.setState({
+      data: this.props.data
+    })
+  }
   render() {
+    
     return (
-      <PieChart width={400} height={400}>
+      <PieChart width={200} height={200}>
         <Pie
-          data={data}
-          cx={200}
-          cy={200}
+          data={this.state.data}
+          cx={110}
+          cy={100}
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={80}
@@ -44,7 +51,7 @@ class PieChartComponent extends PureComponent {
           dataKey="value"
         >
           {
-            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+            this.props.data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
       </PieChart>
