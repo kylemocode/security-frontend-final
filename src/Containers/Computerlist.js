@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Table from '../components/Table/index';
-import Loader from '../components/Loader/index';
-import Navbar from '../components/Navbar';
-import PieChart from '../components/PieChart/index.js';
-import CompanyCard from '../components/CompanyCard/index';
+import Table from '../components/Global/Table/index';
+import Loader from '../components/Global/Loader/index';
+import Navbar from '../components/Global/Navbar';
+import PieChart from '../components/ComputerList/PieChart/index.js';
+import CompanyCard from '../components/ComputerList/CompanyCard/index';
+import CompanyTotalScore from '../components/ComputerList/CompanyTotalScore/index';
 import { history } from '../routers/AppRouter';
-
 
 
 const Computerlist  = (props) =>  {
@@ -47,16 +47,26 @@ const Computerlist  = (props) =>  {
         const containerStyle = {
             marginTop: '100px'
         }
+        const flexCenterStyle = {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }
         
         return (
             data.length ? (
                 <div style={containerStyle}>
                     <Navbar />
-                    <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                        <CompanyCard 
-                            computerNum={data.length}
-                            statusNum={{safeNum,warningNum,dangerousNum}}
-                            />
+                    <div style={flexCenterStyle}>
+                        <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                            <CompanyCard 
+                                computerNum={data.length}
+                                statusNum={{safeNum,warningNum,dangerousNum}}
+                                />
+                        </div>
+                        <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                            <CompanyTotalScore />
+                        </div>
                     </div>
                     <div className="container-fluid">
                         <Table

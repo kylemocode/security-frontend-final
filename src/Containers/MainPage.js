@@ -1,8 +1,8 @@
 import React,{Fragment} from 'react';
 import { Container, GlobalStyle, Title, Content, InfoContainer,FormContainer } from '../components/MainPage/style';
-import { NavbarImage } from '../components/Navbar/style';
-import ParticlesComponent from '../components/Particles/index';
-import FormikLogin from '../components/LoginForm/index';
+import { NavbarImage } from '../components/Global/Navbar/style';
+import ParticlesComponent from '../components/MainPage/Particles/index';
+import FormikLogin from '../components/MainPage/LoginForm/index';
 import { history } from '../routers/AppRouter';
 
 const MainPage = () => {
