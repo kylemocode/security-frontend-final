@@ -23,10 +23,4 @@ export const StatusLabel = styled.div`
     background: #FFF;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(12,0,51,0.1);
-
-    transition: 0.5s;
-    
-    :hover {
-        transform: scale(1.02);
-    }
 `
