@@ -15,7 +15,9 @@ const Computerlist  = (props) =>  {
     const [safeNum, setSafeNum] = useState(0);
     const [warningNum, setWarningNum] = useState(0);
     const [dangerousNum, setDangerousNum] = useState(0);
+    const [totalScore, setTotalScore] = useState(0);
     const token = localStorage.getItem('token');
+
     useEffect(() => {
         document.body.style.backgroundColor = "#FAFAFA";
         axios({
@@ -26,7 +28,9 @@ const Computerlist  = (props) =>  {
         }
           })
             .then(res => {
+                let score = 0;
                 res.data[1].forEach((computer) => {
+                    score += computer.latest_scan_score;
                     switch(computer.last_scan_status) {
                         case 'Safe':
                             setSafeNum(safeNum+1);
@@ -41,6 +45,7 @@ const Computerlist  = (props) =>  {
                 })
                 setData(res.data[1]);
                 setCompanyInfo(res.data[0][0]);
+                setTotalScore(Math.round(score/res.data[1].length/10*100));
             })
             // .catch(err => history.push('/'))
     },[])
@@ -50,9 +55,9 @@ const Computerlist  = (props) =>  {
         const flexCenterStyle = {
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'flex-start'
         }
-        
+        console.log(totalScore)
         return (
             data.length ? (
                 <div style={containerStyle}>
@@ -65,7 +70,8 @@ const Computerlist  = (props) =>  {
                                 />
                         </div>
                         <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                            <CompanyTotalScore />
+                            <CompanyTotalScore 
+                                totalScore={totalScore}/>
                         </div>
                     </div>
                     <div className="container-fluid">

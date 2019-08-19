@@ -3,9 +3,8 @@ import { PieChart, Pie, Sector } from 'recharts';
 
 const data = [
   { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+  { name: 'Group B', value: 300 }
+  
 ];
 
 const renderActiveShape = (props) => {
@@ -14,6 +13,7 @@ const renderActiveShape = (props) => {
     cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
     fill, payload, percent, value,
   } = props;
+  
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
   const sx = cx + (outerRadius + 10) * cos;
@@ -24,9 +24,18 @@ const renderActiveShape = (props) => {
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
 
+  const colorFunction = (score) => {
+    if(score < 30) {
+      return "#55ed6c";
+    }else if(score < 70) {
+      return "#f0a33e";
+    }else {
+      return "#de351f";
+    }
+  }
   return (
     <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '35px'}}>{payload.name+"%"}</text>
       <Sector
         cx={cx}
         cy={cy}
@@ -34,7 +43,7 @@ const renderActiveShape = (props) => {
         outerRadius={outerRadius}
         startAngle={startAngle}
         endAngle={endAngle}
-        fill={fill}
+        fill={colorFunction(payload.name)}
       />
       <Sector
         cx={cx}
@@ -45,12 +54,9 @@ const renderActiveShape = (props) => {
         outerRadius={outerRadius + 10}
         fill={fill}
       />
-      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+      
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
-      </text>
+      
     </g>
   );
 };
@@ -71,18 +77,19 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <PieChart width={280} height={230}>
+      <PieChart width={250} height={200}>
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
-          data={data}
+          data={this.props.data}
           cx={120}
-          cy={120}
+          cy={100}
           innerRadius={60}
           outerRadius={80}
-          fill="#8884d8"
+          fill="#e7e8e6"
           dataKey="value"
-          onMouseEnter={this.onPieEnter}
+          
+          // onMouseEnter={this.onPieEnter}
         />
       </PieChart>
     );
