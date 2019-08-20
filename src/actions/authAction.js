@@ -24,7 +24,7 @@ export const authFail = error => {
 
 export const logout = () => {
     localStorage.removeItem('token');
-    
+    history.push('/');
     return {
         type: AUTH_LOGOUT
     };

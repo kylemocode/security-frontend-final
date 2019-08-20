@@ -33,3 +33,24 @@ export const NavbarTitle = styled.h3`
     opacity: 1;
     z-index: 10;
 `
+
+export const LogoutBtn = styled.button`
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    transition: 0.3s;
+    font-family: '微軟正黑體';
+    transform: translateY(-50%);
+    font-size: 14px;
+
+    :hover {
+        background-color: white;
+        color: rgba(0,0,0,0.9);
+    }
+`

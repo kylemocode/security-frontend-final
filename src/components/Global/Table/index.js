@@ -137,9 +137,9 @@ function CustomPaginationActionsTable(props) {
         <Table className={classes.table}>
           <TableHead>
                 <TableRow>
-                    <TableCell component="th" scope="row">{props.tableMain}</TableCell>
+                    <TableCell component="th" scope="row" style={{fontSize:'15px'}}>{props.tableMain}</TableCell>
                     {props.tableTitle.map((title) => {
-                        return <TableCell align="right" key={title}>{title}</TableCell>
+                        return <TableCell align="right" key={title} style={{fontSize:'15px'}}>{title}</TableCell>
                     })}
                 </TableRow>
           </TableHead>
@@ -155,7 +155,7 @@ function CustomPaginationActionsTable(props) {
                 
                 
                 {props.apiKey.slice(1,props.apiKey.length).map((key) => {
-                    return <TableCell align="right" style={{color: colorFn(key,row[key]),fontSize:'14px'}}>{row[key]}</TableCell>
+                    return <TableCell align="right" style={{color: colorFn(key,row[key]),fontSize:'15px'}}>{row[key]}</TableCell>
                 })}
               </TableRow>
             ))}

@@ -6,8 +6,8 @@ import Navbar from '../components/Global/Navbar';
 import PieChart from '../components/ComputerList/PieChart/index.js';
 import CompanyCard from '../components/ComputerList/CompanyCard/index';
 import CompanyTotalScore from '../components/ComputerList/CompanyTotalScore/index';
+import ExeDownloader from '../components/ComputerList/ExeDownloader/index';
 import { history } from '../routers/AppRouter';
-
 
 const Computerlist  = (props) =>  {
     const [companyInfo, setCompanyInfo] = useState({});
@@ -57,16 +57,17 @@ const Computerlist  = (props) =>  {
             justifyContent: 'center',
             alignItems: 'flex-start'
         }
-        console.log(totalScore)
+        
         return (
             data.length ? (
                 <div style={containerStyle}>
                     <Navbar />
                     <div style={flexCenterStyle}>
-                        <div style={{width: '45vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div style={{width: '45vw',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
                             <CompanyCard 
                                 computerNum={data.length}
                                 />
+                            <ExeDownloader />
                         </div>
                         <div style={{width: '55vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
                             <CompanyTotalScore 
