@@ -36,6 +36,8 @@ const renderActiveShape = (props) => {
   return (
     <g>
       <text x={cx} y={cy} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '35px'}}>{payload.name+"%"}</text>
+      <text x={cx} y={cy+25} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '16px',fontFamily:'微軟正黑體',fontWeight:'750'}}>安全總指數</text>
+      <text x={cx} y={cy+102} dy={8} textAnchor="middle" fill={"rgba(0,0,0,.0.7)"} style={{fontSize: '14px',fontFamily:'微軟正黑體',fontWeight:'750'}}>(指數越低越安全)</text>
       <Sector
         cx={cx}
         cy={cy}
@@ -77,13 +79,13 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <PieChart width={250} height={200}>
+      <PieChart width={250} height={220}>
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           data={this.props.data}
           cx={120}
-          cy={100}
+          cy={85}
           innerRadius={60}
           outerRadius={80}
           fill="#e7e8e6"

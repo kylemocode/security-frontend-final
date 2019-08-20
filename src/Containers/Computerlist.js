@@ -63,15 +63,16 @@ const Computerlist  = (props) =>  {
                 <div style={containerStyle}>
                     <Navbar />
                     <div style={flexCenterStyle}>
-                        <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div style={{width: '45vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
                             <CompanyCard 
                                 computerNum={data.length}
-                                statusNum={{safeNum,warningNum,dangerousNum}}
                                 />
                         </div>
-                        <div style={{width: '50vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div style={{width: '55vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
                             <CompanyTotalScore 
-                                totalScore={totalScore}/>
+                                totalScore={totalScore}
+                                statusNum={{safeNum,warningNum,dangerousNum}}
+                                />
                         </div>
                     </div>
                     <div className="container-fluid">

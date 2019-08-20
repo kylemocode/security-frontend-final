@@ -118,7 +118,19 @@ function CustomPaginationActionsTable(props) {
     setPage(0);
   }
   
-  
+  const colorFn = (key,val) => {
+    if(key==="latest_scan_score") {
+      if(val<4) {
+        return "#55ed6c"
+      }else if(val<7){
+        return "#f0a33e"
+      }else if(val<10){
+        return "#de351f"
+      }
+    }else{
+      return 'rgba(0,0,0,0.7)'
+    }
+  }
   return (
     <Paper className={classes.root}>
       <div className={classes.tableWrapper}>
@@ -143,7 +155,7 @@ function CustomPaginationActionsTable(props) {
                 
                 
                 {props.apiKey.slice(1,props.apiKey.length).map((key) => {
-                    return <TableCell align="right">{row[key]}</TableCell>
+                    return <TableCell align="right" style={{color: colorFn(key,row[key]),fontSize:'14px'}}>{row[key]}</TableCell>
                 })}
               </TableRow>
             ))}
