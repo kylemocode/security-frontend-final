@@ -44,9 +44,9 @@ const CompanyTotalScore = (props) => {
                 </div>
             </TotalScoreContainer>
             
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop: '20px'}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop: '30px'}}>
                 <StatusLabel>
-                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px'}}>
+                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px',padding:'2px 0px'}}>
                         <div style={flexCenter}>
                             <StatusIcon bgc="#55ed6c"/>
                             <p style={{margin:'0',marginLeft:'7px'}}>安全狀態 <span>(0-3)</span></p>
@@ -56,7 +56,7 @@ const CompanyTotalScore = (props) => {
                     </div>
                 </StatusLabel>
                 <StatusLabel>
-                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px'}}>
+                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px',padding:'2px 0px'}}>
                         <div style={flexCenter}>
                             <StatusIcon bgc="#f0a33e"/>
                             <p style={{margin:'0',marginLeft:'7px'}}>警告狀態 <span>(4-6)</span></p>
@@ -66,7 +66,7 @@ const CompanyTotalScore = (props) => {
                      </div>
                 </StatusLabel>
                 <StatusLabel>
-                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px'}}>
+                    <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'微軟正黑體',fontWeight:'700',color:'rgba(0,0,0,0.8)',fontSize:'14px',marginTop:'3px',padding:'2px 0px'}}>
                         <div style={flexCenter}>
                             <StatusIcon bgc="#de351f"/>
                             <p style={{margin:'0',marginLeft:'7px'}}>危險狀態 <span>(7-9)</span></p>

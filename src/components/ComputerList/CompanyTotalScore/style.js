@@ -14,10 +14,11 @@ export const TotalScoreContainer = styled.div`
 
 export const StatusLabel = styled.div`
     width: 32%
-    height: 70px;
+    min-height: 70px;
     padding-top: 5px;
     box-sizing: border-box;
     background: #FFF;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(12,0,51,0.1);
+    line-height: 1.7;
 `
