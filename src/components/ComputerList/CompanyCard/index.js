@@ -21,11 +21,11 @@ const CompanyCard = (props) => {
             <CardContainer>
                 <CompanyInfo>
                     <CompanyText>
-                        <h5 style={{fontWeight:'800',fontSize:'23px'}}>Microsoft Taiwan 台灣微軟</h5>
+                        <h5 style={{fontWeight:'800',fontSize:'23px'}}>VeryBuy 非常勸敗</h5>
                         <p style={{marginBottom: '0',fontWeight:'600',opacity:'0.8'}}>方案: 一般會員</p>
                         <p style={{fontWeight:'600',opacity:'0.8'}}>電腦數量:   {props.computerNum}</p>
                     </CompanyText>
-                    <CompanyLogo src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpggf3Naz7CZXaQIQ0jPKTNsfa9V6b-6uZxWJOoioMN--_WgV1qQ"/>
+                    <CompanyLogo src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDAzQfxgfDNJEDB3GsTzF_moZPGWFrHsgNFcTNdCHEgnrKMz9O0A"/>
                 </CompanyInfo>
             </CardContainer>
     )

@@ -88,7 +88,6 @@ const Computerlist  = (props) =>  {
             ) : <div style={containerStyle}>
                     <Navbar />
                     <Loader />
-                    
                 </div>
         )
     
