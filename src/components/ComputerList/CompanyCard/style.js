@@ -28,11 +28,12 @@ export const CompanyText = styled.div`
     font-family:'微軟正黑體';
     white-space: pre;
     word-break: break-all;
+    padding: 15px 0px;
 `
 
 export const CompanyLogo = styled.img`
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
 `
 
 export const TotalScoreContainer = styled.div`

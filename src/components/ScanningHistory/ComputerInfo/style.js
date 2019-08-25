@@ -9,7 +9,7 @@ export const Container = styled.div`
 `
 
 export const LeftCard = styled.div`
-    flex: 3;
+    flex: 4;
     padding: 20px 20px 20px 20px;
     box-sizing: border-box;
     background: #FFF;
@@ -17,12 +17,23 @@ export const LeftCard = styled.div`
     box-shadow: 0 4px 8px 0 rgba(12,0,51,0.1);
     display: flex;
     transition: 0.5s;
-    
-    overflow: hidden;
+    min-height: 355px;
+    max-height: 355px;
 `
 
 export const RightCard = styled.div`
-    flex: 2;
+    flex: 3;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    background: #FFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(12,0,51,0.1);
+    min-height: 355px;
+    max-height: 355px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
 `
 
 export const LeftCardTitle = styled.div`
@@ -37,6 +48,10 @@ export const LeftCardBody = styled.div`
     flex: 1;
     border-radius: 0px 4px 4px 0px;
     word-break: break-all;
+    overflow-y: scroll;
+    min-height: 330px;
+    max-height: 330px;
+    
 `
 
 export const ScoreIcon = styled.div`
@@ -78,4 +93,6 @@ export const RevealMoreBtn = styled.button`
     border-radius: 5px;
     background-color: #228ee0;
     font-weight: 600;
+    min-width: 70px;
+    margin-bottom: 5px;
 `

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, LeftCard, RightCard, LeftCardTitle, LeftCardBody, ScoreIcon, TrafficLightContainer, TrafficLight, RevealMoreBtn } from './style';
 import ScoreImage from '../../ComputerList/CompanyTotalScore/ScoreImage';
 import ComputerScore from './ComputerScore';
+import ScatterChart from './ScatterChart';
 import PropTypes from 'prop-types';
 
 const ComputerInfo = (props) => {
@@ -63,22 +64,33 @@ const ComputerInfo = (props) => {
 
                 </LeftCardTitle>
                 <LeftCardBody>
-                    <div style={{wordBreak: 'break-all',whiteSpace:'pre-wrap',marginTop:'10px'}}>
+                    <div style={{wordBreak: 'break-all',whiteSpace:'pre-wrap',marginTop:'5px',paddingRight:'10px'}}>
                         <p style={textStyle}><span style={spanstyle}>裝置uuid:  </span>{props.computerInfo.deviceUuid}</p>
                         <p style={textStyle}><span style={spanstyle}>作業系統:  </span>{props.computerInfo.os}</p>
                         <p style={textStyle}><span style={spanstyle}>處理器:  </span>{props.computerInfo.processor}</p>
                         <p style={textStyle}><span style={spanstyle}>中央處理器(CPU):  </span>{props.computerInfo.cpu}</p>
                         <p style={textStyle}><span style={spanstyle}>記憶體空間:  </span>{props.computerInfo.memoryCapacity}</p>
-                        {revealInfo ? (<p>IP 位址: {props.computerInfo.ipAddr.split(',').map((ip) => {
-                            return <p key={ip}>{ip}</p>
-                        })}</p>) : ""}
-                        <RevealMoreBtn onClick={() => handleToggle()}>查看更多</RevealMoreBtn>
+                        {revealInfo ? (
+                            <div>
+                                <p style={textStyle}><span style={spanstyle}>IP 位址: </span>{props.computerInfo.ip.map((ip) => {
+                                    return <p key={ip}>{ip}</p>
+                            })}</p>
+                                <p style={textStyle}><span style={spanstyle}>乙太網路卡位址(Mac Address): </span>{props.computerInfo.mac.map((addr) => {
+                                    return <p key={addr}>{addr}</p>
+                                })}</p>
+                                <p style={textStyle}><span style={spanstyle}>機碼(Registry): </span>{props.computerInfo.registry.map((regis) => {
+                                    return <p key={regis}>{regis}</p>
+                                })}</p>
+                            </div>) : ""}
+                        <RevealMoreBtn style={{marginTop:'5px'}} onClick={() => handleToggle()}>{revealInfo?'收回':'查看更多'}</RevealMoreBtn>
                         
                     </div>
                 </LeftCardBody>
             </LeftCard>
             <RightCard>
-                
+                <div style={{transform:'scale(0.85)',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                    <ScatterChart />
+                </div>
             </RightCard>
         </Container>
     )
