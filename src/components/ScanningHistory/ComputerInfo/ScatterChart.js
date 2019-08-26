@@ -8,12 +8,12 @@ import { schemeCategory10 } from 'd3-scale-chromatic';
 const colors = scaleOrdinal(schemeCategory10).range();
 
 const data = [
-  { x: 100, y: 200, z: 200 },
-  { x: 120, y: 100, z: 260 },
-  { x: 170, y: 300, z: 400 },
-  { x: 140, y: 250, z: 280 },
-  { x: 150, y: 400, z: 500 },
-  { x: 110, y: 280, z: 200 },
+  { x: 7, y: 200 },
+  { x: 5, y: 100 },
+  { x: 4, y: 300 },
+  { x: 3, y: 250 },
+  { x: 8, y: 400 },
+  { x: 1, y: 280 },
 ];
 
 export default class Example extends PureComponent {
@@ -29,12 +29,12 @@ export default class Example extends PureComponent {
         }}
       >
         <CartesianGrid />
-        <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-        <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+        <XAxis type="number" dataKey="x" name="掃描分數" unit="分" />
+        <YAxis type="number" dataKey="y" name="掃描花費時間" unit="秒" />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Scatter name="A school" data={data} fill="#8884d8">
+        <Scatter name="A school" data={this.props.data} fill="#8884d8">
           {
-            data.map((entry, index) => <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />)
+            this.props.data.map((entry, index) => <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />)
           }
         </Scatter>
       </ScatterChart>

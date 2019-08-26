@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Table from '../components/Global/Table/index';
 import Loader from '../components/Global/Loader/index';
 import Navbar from '../components/Global/Navbar';
 import PieChart from '../components/ComputerList/PieChart/index.js';
 import CompanyCard from '../components/ComputerList/CompanyCard/index';
 import CompanyTotalScore from '../components/ComputerList/CompanyTotalScore/index';
+import NewTable from '../components/Global/NewTable/';
 import ExeDownloader from '../components/ComputerList/ExeDownloader/index';
 import { history } from '../routers/AppRouter';
 
@@ -57,7 +57,11 @@ const Computerlist  = (props) =>  {
             justifyContent: 'center',
             alignItems: 'flex-start'
         }
-        
+        let historyData = [];
+        data.forEach((item) => {
+            historyData.push([item.id,item.latest_scan_score,item.deviceName,item.userName,item.ipAddr,item.processor,item.os])
+        })
+
         return (
             data.length ? (
                 <div style={containerStyle}>
@@ -76,12 +80,12 @@ const Computerlist  = (props) =>  {
                                 />
                         </div>
                     </div>
-                    <div className="container-fluid">
-                        <Table
-                            data={data} 
-                            tableMain={"Device ID"} 
-                            tableTitle={["Latest Score","Device Name","User Name","IP Adress","Processor Name","OS"]} 
-                            apiKey={["id","latest_scan_score","deviceName","userName","ipAddr","processor","os"]}/>
+                    <div style={{margin:'10px 5px 15px 5px',zIndex:'-10'}}>
+                    <NewTable 
+                        title=""
+                        data={historyData}
+                        columns={["Device ID","Latest Score","Device Name","User Name","IP Address","Processor","OS"]}
+                        nextUrl="/scanningHistory/"/>
                     </div>
                     
                 </div>

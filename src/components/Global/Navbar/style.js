@@ -12,7 +12,7 @@ export const NavbarContainer = styled.div`
     opacity: ${props => props.opacity ? props.opacity : 0.7};
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 999;
 `
 // radial-gradient( circle 484px at 49.4% 19%,  rgba(23,156,214,1) 0%, rgba(52,48,111,1) 100.2% )
 export const NavbarImage = styled.img`

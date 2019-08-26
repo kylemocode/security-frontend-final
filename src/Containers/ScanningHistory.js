@@ -5,6 +5,7 @@ import Loader from '../components/Global/Loader/index';
 import Table from '../components/Global/Table/index';
 import BreadCrumb from '../components/Global/BreadCrumb/index';
 import ComputerInfo from '../components/ScanningHistory/ComputerInfo/index';
+import NewTable from '../components/Global/NewTable/';
 
 const ScanningHistory = (props) => {
     const [computerInfo,setComputerInfo] = useState({});
@@ -30,7 +31,11 @@ const ScanningHistory = (props) => {
         marginTop: '100px'
     }
     console.log('computer',computerInfo)
-    // console.log('data',data)
+    
+    let historyData = [];
+    data.forEach((item) => {
+        historyData.push([item.scan_id,item.score,item.start_time,item.end_time,item.normal_option.toString(),item.advance_option.toString(),item.customized_option.toString()])
+    })
     return (
         data.length? (
         <div style={containerStyle}>
@@ -39,7 +44,15 @@ const ScanningHistory = (props) => {
                 currentLayer1={true}/>
             <ComputerInfo
                 computerInfo={computerInfo} 
-                computerScore={computerInfo.latest_scan_score}/>
+                computerScore={computerInfo.latest_scan_score}
+                data={data}/>
+            <div style={{margin:'10px 5px 15px 10px',zIndex:'-10'}}>
+                <NewTable 
+                    title=""
+                    data={historyData}
+                    columns={["Scan Id","Score","Start Time","End Time","Normal Option","Advanced Option","Customized Option"]}
+                    nextUrl="/scanningDetail/"/>
+            </div>
         </div>
         ) : <div style={containerStyle}>
                 <Navbar />

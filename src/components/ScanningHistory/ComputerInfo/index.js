@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, LeftCard, RightCard, LeftCardTitle, LeftCardBody, ScoreIcon, TrafficLightContainer, TrafficLight, RevealMoreBtn } from './style';
 import ScoreImage from '../../ComputerList/CompanyTotalScore/ScoreImage';
 import ComputerScore from './ComputerScore';
@@ -7,6 +7,14 @@ import PropTypes from 'prop-types';
 
 const ComputerInfo = (props) => {
     const [revealInfo, setRevealInfo] = useState(false);
+    
+    // useEffect(() => {
+    //     let scatterDataList = [];
+    //     props.data.forEach((history) => {
+    //         scatterDataList.push({x:history.score, y:(new Date(history.end_time).getTime()-new Date(history.start_time).getTime())/1000})
+    //     })
+    //     setScatterData(scatterDataList);
+    // },[]);
 
     const colorPicker = (val) => {
         if(val<4) {
@@ -29,6 +37,13 @@ const ComputerInfo = (props) => {
     const spanstyle = {
         fontWeight: '900'
     }
+    
+    let scatterDataList = [];
+    props.data.forEach((history) => {
+        scatterDataList.push({x:history.score, y:(new Date(history.end_time).getTime()-new Date(history.start_time).getTime())/1000})
+    })
+        
+    
     return (
         <Container>
             <LeftCard>
@@ -88,15 +103,17 @@ const ComputerInfo = (props) => {
                 </LeftCardBody>
             </LeftCard>
             <RightCard>
-                <div style={{transform:'scale(0.85)',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <ScatterChart />
+                <div style={{transform:'scale(0.88)',display:'flex',justifyContent:'center',alignItems:'center',fontWeight:'600'}}>
+                    <ScatterChart 
+                        data={scatterDataList}/>
                 </div>
             </RightCard>
         </Container>
     )
 }
 ComputerInfo.propTypes = {
-    computerInfo: PropTypes.object
+    computerInfo: PropTypes.object,
+    data: PropTypes.array
 }
 
 
