@@ -40,7 +40,7 @@ const CompanyTotalScore = (props) => {
                             }]}
                             />
                     </div>
-                    <p style={{fontSize: '16px',fontFamily:'微軟正黑體',fontWeight:'750',marginTop:'-7.5px'}}>(電腦狀態比例)</p>
+                    <p style={{fontSize: '16px',fontFamily:'微軟正黑體',fontWeight:'750',marginTop:'-7.5px'}}>電腦狀態比例</p>
                 </div>
             </TotalScoreContainer>
             

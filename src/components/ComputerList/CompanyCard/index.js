@@ -21,7 +21,7 @@ const CompanyCard = (props) => {
             <CardContainer>
                 <CompanyInfo>
                     <CompanyText>
-                        <h5 style={{fontWeight:'800',fontSize:'23px'}}>VeryBuy 非常勸敗</h5>
+                        <h5 style={{fontWeight:'800',fontSize:'23px',color:'rgba(0,0,0,0.8)',marginBottom:'10px'}}>VeryBuy 非常勸敗</h5>
                         <p style={{marginBottom: '0',fontWeight:'600',opacity:'0.8'}}>方案: 一般會員</p>
                         <p style={{fontWeight:'600',opacity:'0.8'}}>電腦數量:   {props.computerNum}</p>
                     </CompanyText>

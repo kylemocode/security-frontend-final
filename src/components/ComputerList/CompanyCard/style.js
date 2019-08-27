@@ -4,16 +4,13 @@ export const CardContainer = styled.div`
     width: 90%;
     padding: 7px 22px 0px 22px;
     box-sizing: border-box;
-    background: #FFF;
+    background: #fff;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(12,0,51,0.1);
     display: flex;
     transition: 0.5s;
     flex-direction: column;
 
-    :hover {
-        transform: scale(1.02);
-    }
 `
 
 export const CompanyInfo = styled.div`

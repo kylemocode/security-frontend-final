@@ -30,7 +30,7 @@ const ScanningHistory = (props) => {
     const containerStyle = {
         marginTop: '100px'
     }
-    console.log('computer',computerInfo)
+
     
     let historyData = [];
     data.forEach((item) => {
