@@ -2,6 +2,7 @@ import React,{ useEffect, useState } from 'react'
 import Navbar from '../components/Global/Navbar';
 import Loader from '../components/Global/Loader/index';
 import BreadCrumb from '../components/Global/BreadCrumb/index';
+import ScanningInfo from '../components/ScanningDetail/ScanningInfo/index';
 import axios from 'axios';
 
 const ScanningDetail = (props) => {
@@ -26,14 +27,14 @@ const ScanningDetail = (props) => {
     const containerStyle = {
         marginTop: '100px'
     }
-    console.log(scanningInfo);
-    console.log(scanningFiles);
+    
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
                 <Navbar />
                 <BreadCrumb 
                     currentLayer2={true}/>
+                <ScanningInfo />
             </div>
         ) : (
             <div style={containerStyle}>
