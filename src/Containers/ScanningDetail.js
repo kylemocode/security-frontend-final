@@ -27,14 +27,16 @@ const ScanningDetail = (props) => {
     const containerStyle = {
         marginTop: '100px'
     }
-    
+    console.log(scanningInfo);
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
                 <Navbar />
                 <BreadCrumb 
                     currentLayer2={true}/>
-                <ScanningInfo />
+                <ScanningInfo 
+                    score={scanningInfo.score}
+                    scanId={scanningInfo.scan_id}/>
             </div>
         ) : (
             <div style={containerStyle}>
