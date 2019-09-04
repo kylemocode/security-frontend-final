@@ -3,6 +3,7 @@ import Navbar from '../components/Global/Navbar';
 import Loader from '../components/Global/Loader/index';
 import BreadCrumb from '../components/Global/BreadCrumb/index';
 import ScanningInfo from '../components/ScanningDetail/ScanningInfo/index';
+import NewTable from '../components/Global/NewTable/';
 import axios from 'axios';
 
 const ScanningDetail = (props) => {
@@ -27,7 +28,11 @@ const ScanningDetail = (props) => {
     const containerStyle = {
         marginTop: '100px'
     }
-    console.log(scanningInfo);
+    
+    let fileData = [];
+    scanningFiles.forEach((file) => {
+        fileData.push([file.file_path])
+    })
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
@@ -36,7 +41,19 @@ const ScanningDetail = (props) => {
                     currentLayer2={true}/>
                 <ScanningInfo 
                     score={scanningInfo.score}
-                    scanId={scanningInfo.scan_id}/>
+                    scanId={scanningInfo.scan_id}
+                    startTime={scanningInfo.start_time}
+                    endTime={scanningInfo.end_time}
+                    normalOption={scanningInfo.normal_option}
+                    advanceOption={scanningInfo.advance_option}
+                    customizedOption={scanningInfo.customized_option}/>
+                <div style={{margin:'10px 5px 15px 10px'}}>
+                    <NewTable 
+                        title=""
+                        data={fileData}
+                        columns={["File Path"]}
+                        nextUrl="/fileDetail/"/>
+                </div>
             </div>
         ) : (
             <div style={containerStyle}>

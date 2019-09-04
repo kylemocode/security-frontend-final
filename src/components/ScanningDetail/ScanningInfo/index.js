@@ -2,7 +2,8 @@ import React from 'react'
 import { Container, LeftCard, RightCard, LeftCardTitle, LeftCardBody } from '../../ScanningHistory/ComputerInfo/style';
 import ComputerScore from '../../ScanningHistory/ComputerInfo/ComputerScore';
 import { TrafficLightContainer, TrafficLight, ScoreIcon } from '../../ScanningHistory/ComputerInfo/style';
-import { DetailTitle, DetailContainer } from './style';
+import { DetailTitle, DetailContainer, InfoLabel } from './style';
+import AmountChart from './AmountChart/index';
 
 const ScanningInfo = (props) => {
 
@@ -64,13 +65,20 @@ const ScanningInfo = (props) => {
                         </div>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'25px'}}>
                             <DetailContainer>
-                                test
+                                <InfoLabel>開始時間: {props.startTime}</InfoLabel>
+                                <InfoLabel>結束時間: {props.endTime}</InfoLabel>
+                                <InfoLabel>正常選項: {props.normalOption?"是":"否"}</InfoLabel>
+                                <InfoLabel>進階選項: {props.advancedOption?"是":"否"}</InfoLabel>
+                                <InfoLabel>客製選項: {props.ustomizedOption?"是":"否"}</InfoLabel>
                             </DetailContainer>
                         </div>
                 </LeftCardBody>
             </LeftCard>
 
             <RightCard>
+                <div style={{transform:'scale(0.82)',marginTop:'15px'}}>
+                    <AmountChart />
+                </div>
             </RightCard>
         </Container>
     )

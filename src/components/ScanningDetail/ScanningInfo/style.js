@@ -21,4 +21,18 @@ export const DetailContainer = styled.div`
     min-height: 220px;
     box-sizing: border-box;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
+
+export const InfoLabel = styled.div`
+    width: 95%;
+    background-color: rgba(255,255,255,0.9);
+    padding: 3px 5px;
+    border-radius: 4px;
+    color: rgba(0,0,0,0.6);
+    font-weight: 700;
+    font-size: 14px;
 `
