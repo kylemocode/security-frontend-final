@@ -6,23 +6,35 @@ import {
 
 const data = [
   {
-    name: 'Page A', uv: 590, pv: 800, amt: 1400,
+    name: '0分', uv: 2
   },
   {
-    name: 'Page B', uv: 868, pv: 967, amt: 1506,
+    name: '1分', uv: 5
   },
   {
-    name: 'Page C', uv: 1397, pv: 1098, amt: 989,
+    name: '2分', uv: 2
   },
   {
-    name: 'Page D', uv: 1480, pv: 1200, amt: 1228,
+    name: '3分', uv: 1
   },
   {
-    name: 'Page E', uv: 1520, pv: 1108, amt: 1100,
+    name: '4分', uv: 0
   },
   {
-    name: 'Page F', uv: 1400, pv: 680, amt: 1700,
+    name: '5分', uv: 7
   },
+  {
+    name: '6分', uv: 2
+  },
+  {
+    name: '7分', uv: 4
+  },
+  {
+    name: '8分', uv: 2
+  },
+  {
+    name: '9分', uv: 1
+  }
 ];
 
 export default class Example extends PureComponent {
