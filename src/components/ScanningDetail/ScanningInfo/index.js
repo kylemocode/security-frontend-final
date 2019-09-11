@@ -7,6 +7,18 @@ import AmountChart from './AmountChart/index';
 
 const ScanningInfo = (props) => {
 
+    const statusResolver = (status) => {
+        if(status.normalOption && !status.advancedOption && !status.customizedOption) {
+            return "一般";
+        }
+        if(!status.normalOption && !status.advancedOption && status.customizedOption) {
+            return "客製化";
+        }
+        if(!status.normalOption && status.advancedOption && !status.customizedOption) {
+            return "進階";
+        }
+    }
+
     const colorPicker = (val) => {
         if(val<4) {
             return "#55ed6c"
@@ -67,9 +79,8 @@ const ScanningInfo = (props) => {
                             <DetailContainer>
                                 <InfoLabel>開始時間: {props.startTime}</InfoLabel>
                                 <InfoLabel>結束時間: {props.endTime}</InfoLabel>
-                                <InfoLabel>正常選項: {props.normalOption?"是":"否"}</InfoLabel>
-                                <InfoLabel>進階選項: {props.advancedOption?"是":"否"}</InfoLabel>
-                                <InfoLabel>客製選項: {props.ustomizedOption?"是":"否"}</InfoLabel>
+                                <InfoLabel>掃描時間: {props.endTime}</InfoLabel>
+                                <InfoLabel>掃描模式: {statusResolver(props)}</InfoLabel>
                             </DetailContainer>
                         </div>
                 </LeftCardBody>

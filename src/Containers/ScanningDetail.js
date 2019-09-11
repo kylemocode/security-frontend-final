@@ -31,8 +31,9 @@ const ScanningDetail = (props) => {
     
     let fileData = [];
     scanningFiles.forEach((file) => {
-        fileData.push([file.file_path])
+        fileData.push([file.id,file.score,file.file_path])
     })
+    
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
@@ -51,7 +52,7 @@ const ScanningDetail = (props) => {
                     <NewTable 
                         title=""
                         data={fileData}
-                        columns={["File Path"]}
+                        columns={["File ID","Score","File Path"]}
                         nextUrl="/fileDetail/"/>
                 </div>
             </div>

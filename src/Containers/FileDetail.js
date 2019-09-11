@@ -18,7 +18,7 @@ const FileDetail = (props) => {
 
     return (
         <div>
-            filedetail
+            filedetail-{props.match.params.id}
         </div>
     )
 }

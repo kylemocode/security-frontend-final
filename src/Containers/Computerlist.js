@@ -55,7 +55,8 @@ const Computerlist  = (props) =>  {
         const flexCenterStyle = {
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
+            
         }
         let historyData = [];
         data.forEach((item) => {

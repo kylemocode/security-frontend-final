@@ -50,7 +50,7 @@ const ScanningHistory = (props) => {
                 <NewTable 
                     title=""
                     data={historyData}
-                    columns={["Scan Id","Score","Start Time","End Time","Normal Option","Advanced Option","Customized Option"]}
+                    columns={["Scan ID","Score","Start Time","End Time","Normal Option","Advanced Option","Customized Option"]}
                     nextUrl="/scanningDetail/"/>
             </div>
         </div>

@@ -35,8 +35,8 @@ const renderActiveShape = (props) => {
   }
   return (
     <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '35px'}}>{payload.name+"%"}</text>
-      <text x={cx} y={cy+25} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '16px',fontFamily:'微軟正黑體',fontWeight:'750'}}>安全總指數</text>
+      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '30px'}}>{payload.name+"%"}</text>
+      <text x={cx} y={cy+25} dy={8} textAnchor="middle" fill={colorFunction(payload.name)} style={{fontSize: '14px',fontFamily:'微軟正黑體',fontWeight:'750'}}>安全總指數</text>
       <text x={cx} y={cy+104} dy={8} textAnchor="middle" fill={"rgba(0,0,0,.0.7)"} style={{fontSize: '14px',fontFamily:'微軟正黑體',fontWeight:'750'}}>企業安全總指數(指數越低越安全)</text>
       <Sector
         cx={cx}

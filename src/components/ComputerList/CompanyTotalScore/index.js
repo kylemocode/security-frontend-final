@@ -12,7 +12,7 @@ const CompanyTotalScore = (props) => {
         alignItems: 'center'
     }
     return (
-        <div style={{width: '100%',marginRight:'5px'}}>
+        <div style={{width: '100%',marginRight:'15px'}}>
             <TotalScoreContainer>
                 <div style={{transform: 'scale(1.1)'}}>
                     <ScoreImage 
