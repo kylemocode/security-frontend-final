@@ -1,27 +1,15 @@
-import React,{Fragment} from 'react';
-import { CardContainer, CompanyInfo, CompanyText, CompanyLogo, TotalScoreContainer, TotalScoreImg, TotalScoreInfo, StatusIcon } from './style';
-import PieChart from '../PieChart/index';
+import React from 'react';
+import { CardContainer, CompanyInfo, CompanyText, CompanyLogo } from './style';
 import PropTypes from 'prop-types';
 
 const CompanyCard = (props) => {
 
-    const flexCenterStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '6px 0px'
-    }
-
-    const statusCountStyle = {
-        marginBottom:'0',
-        marginLeft:'15px',
-    }
 
     return (
             <CardContainer>
                 <CompanyInfo>
                     <CompanyText>
-                        <h5 style={{fontWeight:'800',fontSize:'23px',color:'rgba(0,0,0,0.8)',marginBottom:'10px'}}><span><i class="fas fa-building"></i></span>  Airbnb</h5>
+                        <h5 style={{fontWeight:'800',fontSize:'23px',color:'rgba(0,0,0,0.8)',marginBottom:'10px'}}>Airbnb</h5>
                         <p style={{marginBottom: '0',fontWeight:'600',opacity:'0.8'}}>方案: 一般會員</p>
                         <p style={{fontWeight:'600',opacity:'0.8'}}>電腦數量:   {props.computerNum}</p>
                     </CompanyText>
