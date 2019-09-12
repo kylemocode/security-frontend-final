@@ -30,9 +30,12 @@ const ScanningDetail = (props) => {
     }
     
     let fileData = [];
+    let amountChartData = [];
     scanningFiles.forEach((file) => {
-        fileData.push([file.id,file.score,file.file_path])
+        fileData.push([file.id,file.score,file.file_path]);
+        amountChartData.push(file.score)
     })
+    
     
     return (
         scanningFiles.length? (
@@ -47,7 +50,8 @@ const ScanningDetail = (props) => {
                     endTime={scanningInfo.end_time}
                     normalOption={scanningInfo.normal_option}
                     advanceOption={scanningInfo.advance_option}
-                    customizedOption={scanningInfo.customized_option}/>
+                    customizedOption={scanningInfo.customized_option}
+                    amountChartData={amountChartData}/>
                 <div style={{margin:'10px 5px 15px 10px'}}>
                     <NewTable 
                         title=""

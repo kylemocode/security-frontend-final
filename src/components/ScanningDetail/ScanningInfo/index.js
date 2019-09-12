@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import { Container, LeftCard, RightCard, LeftCardTitle, LeftCardBody } from '../../ScanningHistory/ComputerInfo/style';
 import ComputerScore from '../../ScanningHistory/ComputerInfo/ComputerScore';
 import { TrafficLightContainer, TrafficLight, ScoreIcon } from '../../ScanningHistory/ComputerInfo/style';
@@ -38,6 +38,7 @@ const ScanningInfo = (props) => {
             return "危險"
           }
     }
+
     return (
         <Container>
             <LeftCard>
@@ -79,7 +80,7 @@ const ScanningInfo = (props) => {
                             <DetailContainer>
                                 <InfoLabel>開始時間: {props.startTime}</InfoLabel>
                                 <InfoLabel>結束時間: {props.endTime}</InfoLabel>
-                                <InfoLabel>掃描時間: {props.endTime}</InfoLabel>
+                                <InfoLabel>掃描時間: {(new Date(props.endTime).getTime()-new Date(props.startTime).getTime())/1000}秒</InfoLabel>
                                 <InfoLabel>掃描模式: {statusResolver(props)}</InfoLabel>
                             </DetailContainer>
                         </div>
@@ -88,7 +89,8 @@ const ScanningInfo = (props) => {
 
             <RightCard>
                 <div style={{transform:'scale(0.82)',marginTop:'15px'}}>
-                    <AmountChart />
+                    <AmountChart 
+                        amountChartData={props.amountChartData}/>
                 </div>
             </RightCard>
         </Container>
