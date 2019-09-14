@@ -2,7 +2,6 @@ import React,{ useState,useEffect } from 'react'
 import axios from 'axios';
 import Navbar from '../components/Global/Navbar';
 import Loader from '../components/Global/Loader/index';
-import Table from '../components/Global/Table/index';
 import BreadCrumb from '../components/Global/BreadCrumb/index';
 import ComputerInfo from '../components/ScanningHistory/ComputerInfo/index';
 import NewTable from '../components/Global/NewTable/';

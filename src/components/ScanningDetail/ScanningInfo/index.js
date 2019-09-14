@@ -1,9 +1,10 @@
-import React,{ useState, useEffect } from 'react'
+import React,{ useState, useEffect, Suspense } from 'react'
 import { Container, LeftCard, RightCard, LeftCardTitle, LeftCardBody } from '../../ScanningHistory/ComputerInfo/style';
 import ComputerScore from '../../ScanningHistory/ComputerInfo/ComputerScore';
 import { TrafficLightContainer, TrafficLight, ScoreIcon } from '../../ScanningHistory/ComputerInfo/style';
 import { DetailTitle, DetailContainer, InfoLabel } from './style';
-import AmountChart from './AmountChart/index';
+// import AmountChart from './AmountChart/index';
+const AmountChart = React.lazy(() => import('./AmountChart/index'));
 
 const ScanningInfo = (props) => {
 
@@ -88,10 +89,13 @@ const ScanningInfo = (props) => {
             </LeftCard>
 
             <RightCard>
-                <div style={{transform:'scale(0.82)',marginTop:'15px'}}>
-                    <AmountChart 
-                        amountChartData={props.amountChartData}/>
-                </div>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <div style={{transform:'scale(0.82)',marginTop:'15px'}}>
+                        <AmountChart 
+                            amountChartData={props.amountChartData}/>
+                    </div>
+                </Suspense>
+                
             </RightCard>
         </Container>
     )

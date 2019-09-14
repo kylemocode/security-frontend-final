@@ -136,7 +136,7 @@ export default class Example extends PureComponent {
       >
         <CartesianGrid stroke="#f5f5f5" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis dataKey="數量"/>
         <Tooltip />
         <Bar dataKey="數量" barSize={20} fill="#413ea0" />
         <Line type="monotone" dataKey="數量" stroke="#ff7300" />
