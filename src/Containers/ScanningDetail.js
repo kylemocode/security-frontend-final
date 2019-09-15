@@ -5,6 +5,7 @@ import BreadCrumb from '../components/Global/BreadCrumb/index';
 import ScanningInfo from '../components/ScanningDetail/ScanningInfo/index';
 import NewTable from '../components/Global/NewTable/';
 import axios from 'axios';
+import _ from 'lodash';
 
 const ScanningDetail = (props) => {
     const [scanningInfo, setScanningInfo] = useState({});
@@ -36,7 +37,7 @@ const ScanningDetail = (props) => {
         amountChartData.push(file.score)
     })
     
-    
+    const amountCounter = _.countBy(amountChartData);
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
@@ -51,7 +52,8 @@ const ScanningDetail = (props) => {
                     normalOption={scanningInfo.normal_option}
                     advanceOption={scanningInfo.advance_option}
                     customizedOption={scanningInfo.customized_option}
-                    amountChartData={amountChartData}/>
+                    amountChartData={amountChartData}
+                    amountCounter={amountCounter}/>
                 <div style={{margin:'10px 5px 15px 10px'}}>
                     <NewTable 
                         title=""

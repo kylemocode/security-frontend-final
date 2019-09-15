@@ -92,7 +92,8 @@ const ScanningInfo = (props) => {
                 <Suspense fallback={<div>Loading...</div>}>
                     <div style={{transform:'scale(0.82)',marginTop:'15px'}}>
                         <AmountChart 
-                            amountChartData={props.amountChartData}/>
+                            amountChartData={props.amountChartData}
+                            amountCounter={props.amountCounter}/>
                     </div>
                 </Suspense>
                 

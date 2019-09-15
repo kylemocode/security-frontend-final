@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import {
-  ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  Legend,
+  ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  
 } from 'recharts';
 
 // const data = [
@@ -39,90 +39,39 @@ import {
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/94sebfL8/';
-  state = {
-      score: {}
-  }
-  componentDidMount() {
-    let score = {
-      zero: 0,
-      one: 0,
-      two: 0,
-      three: 0,
-      four: 0,
-      five: 0,
-      six: 0,
-      seven: 0,
-      eight: 0,
-      nine: 0
-    }
-    this.props.amountChartData.forEach((scoredata) => {
-      if(scoredata === 0) {
-        score.zero+=1;
-      }
-      if(scoredata === 1) {
-        score.one+=1;
-      }
-      if(scoredata === 2) {
-        score.two+=1;
-      }
-      if(scoredata === 3) {
-        score.three+=1;
-      }
-      if(scoredata === 4) {
-        score.four+=1;
-      }
-      if(scoredata === 5) {
-        score.five+=1;
-      }
-      if(scoredata === 6) {
-        score.six+=1;
-      }
-      if(scoredata === 7) {
-        score.seven+=1;
-      }
-      if(scoredata === 8) {
-        score.eight+=1;
-      }
-      if(scoredata === 9) {
-        score.nine+=1;
-      }
-    })
-    this.setState({
-      score
-    })
-    
-  }
+  
   render() {
+    
     const data = [
       {
-        name: '0分', 數量: this.state.score.zero
+        name: '0分', 數量: this.props.amountCounter[0]
       },
       {
-        name: '1分', 數量: this.state.score.one
+        name: '1分', 數量: this.props.amountCounter[1]
       },
       {
-        name: '2分', 數量: this.state.score.two
+        name: '2分', 數量: this.props.amountCounter[2]
       },
       {
-        name: '3分', 數量: this.state.score.three
+        name: '3分', 數量: this.props.amountCounter[3]
       },
       {
-        name: '4分', 數量: this.state.score.four
+        name: '4分', 數量: this.props.amountCounter[4]
       },
       {
-        name: '5分', 數量: this.state.score.five
+        name: '5分', 數量: this.props.amountCounter[5]
       },
       {
-        name: '6分', 數量: this.state.score.six
+        name: '6分', 數量: this.props.amountCounter[6]
       },
       {
-        name: '7分', 數量: this.state.score.seven
+        name: '7分', 數量: this.props.amountCounter[7]
       },
       {
-        name: '8分', 數量: this.state.score.eight
+        name: '8分', 數量: this.props.amountCounter[8]
       },
       {
-        name: '9分', 數量: this.state.score.nine
+        name: '9分', 數量: this.props.amountCounter[9]
       }
     ]
     return (
