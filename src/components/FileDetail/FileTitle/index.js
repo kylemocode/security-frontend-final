@@ -1,5 +1,5 @@
 import React from 'react'
-import { FileTitleContainer, FileTitleScore, FileTitleInfo, Info1, Info2, Info3, Info4, InfoContainer, StickerContainer } from './style';
+import { FileTitleContainer, FileTitleScore, FileTitleInfo, Info1, Info2, TitleSpan, InfoContainer, StickerContainer } from './style';
 import ComputerScore from '../../ScanningHistory/ComputerInfo/ComputerScore';
 import Sticker from './Sticker';
 
@@ -29,16 +29,20 @@ const FileTitle = (props) => {
                 <FileTitleInfo>
                     <InfoContainer>
                         <Info1>
-                            <p>{props.filePath}</p>
-                            <p>{props.hash}</p>
+                            <p><TitleSpan>File path: </TitleSpan>{props.filePath}</p>
+                            <p><TitleSpan>File hash: </TitleSpan>{props.hash}</p>
                         </Info1>
                         <Info2>
-                            {props.fileSize}
-                            {props.createTime}    
+                            <p><TitleSpan>File size: </TitleSpan>{props.fileSize} Bytes</p>
+                            <p><TitleSpan>Create time: </TitleSpan>{props.createTime}</p>   
                         </Info2>
                     </InfoContainer>
                     <StickerContainer>
-                        <Sticker />
+                        <Sticker 
+                            signed={props.data.signature_verification}
+                            score={props.score}
+                            entropy={props.data.entropy}
+                            packed={props.data.peutils_packed}/>
                     </StickerContainer>
                 </FileTitleInfo>
             </FileTitleContainer>

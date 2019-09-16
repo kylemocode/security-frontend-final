@@ -22,20 +22,23 @@ export const FileTitleInfo = styled.div`
 export const InfoContainer = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 `
 
 export const Info1 = styled.div`
     margin-right: 5px;
+    font-size: 13px;
+    color: rgba(0,0,0,0.7);
 `
 export const Info2 = styled.div`
     margin-right: 5px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
 `
-export const Info3 = styled.div`
-    margin-right: 5px;
-`
-export const Info4 = styled.div`
-    
+export const TitleSpan = styled.span`
+    font-size: 16px;
+    font-weight: 700;
 `
 
 export const StickerContainer = styled.div`

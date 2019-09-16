@@ -42,6 +42,7 @@ const FileDetail = (props) => {
                     filePath={scanFileInfo[0].file_path}
                     fileSize={scanFileInfo[0].file_size}
                     createTime={scanFileInfo[0].create_time}
+                    data={scanFileInfo[0]}
                     />
                 
             </div>

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SmallOutlinedChips() {
+export default function SmallOutlinedChips(props) {
   const classes = useStyles();
 
   function handleDelete() {
@@ -28,61 +28,66 @@ export default function SmallOutlinedChips() {
 
   return (
     <div className={classes.root}>
-        <Chip
+      {props.signed==='Signed'?<Chip
             variant="outlined"
             size="small"
             avatar={<Avatar>簽</Avatar>}
-            label="Primary Clickable Chip"
+            label="Signature Verification"
             clickable
             className={classes.chip}
             color="primary"
             onDelete={handleDelete}
             deleteIcon={<DoneIcon />}
-        />
-        <Chip
+        />: null}
+        
+        {props.score<4?<Chip
             variant="outlined"
             size="small"
             avatar={<Avatar>安全</Avatar>}
-            label="Primary Clickable Chip"
+            label="Safe File"
             clickable
             className={classes.chip}
             color="primary"
             onDelete={handleDelete}
             deleteIcon={<DoneIcon />}
-        />
-        <Chip
+        />: null}
+        
+        {props.entropy?<Chip
+            variant="outlined"
+            size="small"
+            avatar={<Avatar>熵</Avatar>}
+            label={`Entropy: ${props.entropy}`}
+            clickable
+            className={classes.chip}
+            color="primary"
+            onDelete={handleDelete}
+            deleteIcon={<DoneIcon />}
+        />: null}
+        
+        {props.score > 6?<Chip
             variant="outlined"
             size="small"
             avatar={<Avatar>危</Avatar>}
-            label="Primary Clickable Chip"
+            label="Dangerous File"
             clickable
             className={classes.chip}
             color="secondary"
             onDelete={handleDelete}
             deleteIcon={<DoneIcon />}
-        />
-        <Chip
+        />: null}
+        
+        {props.packed.length ?<Chip
             variant="outlined"
             size="small"
-            avatar={<Avatar>熵</Avatar>}
-            label="Primary Clickable Chip"
+            avatar={<Avatar>殼</Avatar>}
+            label="Peutils Packed 已加殼"
             clickable
             className={classes.chip}
             color="primary"
             onDelete={handleDelete}
             deleteIcon={<DoneIcon />}
-        />
-         <Chip
-            variant="outlined"
-            size="small"
-            avatar={<Avatar>MB</Avatar>}
-            label="Primary Clickable Chip"
-            clickable
-            className={classes.chip}
-            color="primary"
-            onDelete={handleDelete}
-            deleteIcon={<DoneIcon />}
-        />
+        />: null}
+         
     </div>
   );
 }
