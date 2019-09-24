@@ -3,7 +3,7 @@ import { Container, GlobalStyle, Title, Content, InfoContainer,FormContainer } f
 import { NavbarImage } from '../components/Global/Navbar/style';
 import ParticlesComponent from '../components/MainPage/Particles/index';
 import FormikLogin from '../components/MainPage/LoginForm/index';
-import { history } from '../routers/AppRouter';
+
 
 const MainPage = () => {
     return (

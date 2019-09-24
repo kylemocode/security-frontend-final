@@ -44,34 +44,34 @@ export default class Example extends PureComponent {
     
     const data = [
       {
-        name: '0分', 數量: this.props.amountCounter[0]
+        name: '0分', 數量: this.props.amountCounter[0] || 0
       },
       {
-        name: '1分', 數量: this.props.amountCounter[1]
+        name: '1分', 數量: this.props.amountCounter[1] || 0
       },
       {
-        name: '2分', 數量: this.props.amountCounter[2]
+        name: '2分', 數量: this.props.amountCounter[2] || 0
       },
       {
-        name: '3分', 數量: this.props.amountCounter[3]
+        name: '3分', 數量: this.props.amountCounter[3] || 0
       },
       {
-        name: '4分', 數量: this.props.amountCounter[4]
+        name: '4分', 數量: this.props.amountCounter[4] || 0
       },
       {
-        name: '5分', 數量: this.props.amountCounter[5]
+        name: '5分', 數量: this.props.amountCounter[5] || 0
       },
       {
-        name: '6分', 數量: this.props.amountCounter[6]
+        name: '6分', 數量: this.props.amountCounter[6] || 0
       },
       {
-        name: '7分', 數量: this.props.amountCounter[7]
+        name: '7分', 數量: this.props.amountCounter[7] || 0
       },
       {
-        name: '8分', 數量: this.props.amountCounter[8]
+        name: '8分', 數量: this.props.amountCounter[8] || 0
       },
       {
-        name: '9分', 數量: this.props.amountCounter[9]
+        name: '9分', 數量: this.props.amountCounter[9] || 0
       }
     ]
     return (

@@ -3,6 +3,8 @@ import Navbar from '../components/Global/Navbar';
 import Loader from '../components/Global/Loader/index';
 import BreadCrumb from '../components/Global/BreadCrumb/index';
 import FileTitle from '../components/FileDetail/FileTitle';
+import {StyledData} from '../components/FileDetail/FileData/style';
+import {StyledContent} from '../components/FileDetail/FileContent/style';
 import axios from 'axios';
 
 
@@ -44,6 +46,8 @@ const FileDetail = (props) => {
                     createTime={scanFileInfo[0].create_time}
                     data={scanFileInfo[0]}
                     />
+                <StyledContent />
+                <StyledData data={scanFileInfo}/>
                 
             </div>
             ) : <div style={containerStyle}>

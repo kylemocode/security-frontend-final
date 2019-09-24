@@ -38,6 +38,7 @@ const ScanningDetail = (props) => {
     })
     
     const amountCounter = _.countBy(amountChartData);
+    
     return (
         scanningFiles.length? (
             <div style={containerStyle}>
