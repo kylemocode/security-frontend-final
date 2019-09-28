@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FileData = (props) => {
-	console.log(props.data[0].file_path.split('/').slice(-1))
+	
 	return (
 		<div className={props.className}>
 			<div>
@@ -25,6 +25,14 @@ const FileData = (props) => {
 				<p className="content__body"><span className="content__subtitle">Accessed time:  </span>{props.data[0].accessed_time}</p>
 			</div>
 			<div className="content__margin">
+				<p className="content__title">PE Header</p>
+				<p className="content__body"><span className="content__subtitle">Machine:  </span>{props.data[0].pe_machine}</p>
+				<p className="content__body"><span className="content__subtitle">Section Number:  </span>{props.data[0].pe_sectionNum}</p>
+				<p className="content__body"><span className="content__subtitle">Datetime Stamp:  </span>{props.data[0].pe_timeDateStamp}</p>
+				<p className="content__body"><span className="content__subtitle">Characteristics:  </span>{props.data[0].pe_characteristics}</p>
+				<p className="content__body"><span className="content__subtitle">Entry Point:  </span>{props.data[0].pe_entryPoint}</p>
+			</div>
+			<div className="content__margin">
 				<p className="content__title">Imports</p>
 				{props.data[0].imports.map((item) => {
 					return <p className="content__body">{item}</p>
@@ -34,6 +42,12 @@ const FileData = (props) => {
 				<p className="content__title">Exports</p>
 				{props.data[0].exports.map((item) => {
 					return <p className="content__body">{item}</p>
+				})}
+			</div>
+			<div className="content__margin">
+				<p className="content__title">Sections</p>
+				{props.data[0].sections.map((section) => {
+					return <p className="content__body" style={{fontSize: '13px'}}>{section}</p>
 				})}
 			</div>
 			<div className="content__margin">
@@ -49,23 +63,10 @@ const FileData = (props) => {
 				<p className="content__body">{props.data[0].signing_date}</p>
 			</div>
 			<div className="content__margin">
-				<p className="content__title">Packede</p>
+				<p className="content__title">Packed</p>
 				<p className="content__body">{props.data[0].packed}</p>
 			</div>
-			<div className="content__margin">
-				<p className="content__title">Sections</p>
-				{props.data[0].sections.map((section) => {
-					return <p className="content__body" style={{fontSize: '13px'}}>{section}</p>
-				})}
-			</div>
-			<div className="content__margin">
-				<p className="content__title">About PE</p>
-				<p className="content__body"><span className="content__subtitle">Machine:  </span>{props.data[0].pe_machine}</p>
-				<p className="content__body"><span className="content__subtitle">Section Number:  </span>{props.data[0].pe_sectionNum}</p>
-				<p className="content__body"><span className="content__subtitle">Datetime Stamp:  </span>{props.data[0].pe_timeDateStamp}</p>
-				<p className="content__body"><span className="content__subtitle">Characteristics:  </span>{props.data[0].pe_characteristics}</p>
-				<p className="content__body"><span className="content__subtitle">Entry Point:  </span>{props.data[0].pe_entryPoint}</p>
-			</div>
+			
 			
 		</div>
 	)

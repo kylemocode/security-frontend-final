@@ -6,6 +6,7 @@ import FileDetail from '../Containers/FileDetail';
 import MainPage from '../Containers/MainPage';
 import scanningDetail from '../Containers/ScanningDetail';
 import createHistory from 'history/createBrowserHistory';
+import FileUpload from '../Containers/FileUpload';
 
 export const history = createHistory();
 
@@ -19,6 +20,7 @@ const AppRouter = () => {
                     <Route path="/scanningHistory/:id"  component={ScanningHistory}/>
                     <Route path="/scanningDetail/:id" component={scanningDetail} />
                     <Route path="/fileDetail/:id" component={FileDetail} />
+                    <Route path="/fileUpload" component={FileUpload} />
                 </Switch>
             </Fragment>
         </Router>

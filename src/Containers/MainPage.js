@@ -3,7 +3,7 @@ import { Container, GlobalStyle, Title, Content, InfoContainer,FormContainer } f
 import { NavbarImage } from '../components/Global/Navbar/style';
 import ParticlesComponent from '../components/MainPage/Particles/index';
 import FormikLogin from '../components/MainPage/LoginForm/index';
-
+import { StyledButton } from '../components/MainPage/PlaygroundBtn/style';
 
 const MainPage = () => {
     return (
@@ -26,6 +26,7 @@ const MainPage = () => {
                     <Content style={{fontWeight: 'bold',fontSize: '19px'}}>最佳的企業資訊安全小幫手</Content>
                     <Content>掃描您的 windows 電腦，並運用深度學習技術分析 PE 可執行檔的安全性</Content>
                     <Content>以及呈現相關詳細資訊，清楚掌握電腦的安全狀況，將潛在威脅拒之門外</Content>
+                    <StyledButton />
                 </InfoContainer>
                 
             </Container>
