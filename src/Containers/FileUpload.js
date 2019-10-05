@@ -1,11 +1,17 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import Banner from '../components/FileUpload/Banner/index';
 import { PlaygroundGlobalStyle } from '../components/FileUpload/style';
 import UploadInput  from '../components/FileUpload/UploadInput/index';
 import { PageContainer } from '../components/FileUpload/style';
 import { PageInfo } from '../components/FileUpload/style';
+import axios from 'axios';
+
 
 const FileUpload = () => {
+	useEffect(() => {
+		document.body.style.backgroundColor = "#303e8f";
+		
+	},[])
 	return (
 		<PageContainer>
 			<PlaygroundGlobalStyle />

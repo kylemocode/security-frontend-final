@@ -4,38 +4,6 @@ import {
   
 } from 'recharts';
 
-// const data = [
-//   {
-//     name: '0分', 數量: 2
-//   },
-//   {
-//     name: '1分', 數量: 5
-//   },
-//   {
-//     name: '2分', 數量: 2
-//   },
-//   {
-//     name: '3分', 數量: 1
-//   },
-//   {
-//     name: '4分', 數量: 0
-//   },
-//   {
-//     name: '5分', 數量: 7
-//   },
-//   {
-//     name: '6分', 數量: 2
-//   },
-//   {
-//     name: '7分', 數量: 4
-//   },
-//   {
-//     name: '8分', 數量: 2
-//   },
-//   {
-//     name: '9分', 數量: 1
-//   }
-// ];
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/94sebfL8/';

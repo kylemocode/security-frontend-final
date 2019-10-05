@@ -3,7 +3,7 @@ import { NavbarContainer,NavbarImage,NavbarTitle, LogoutBtn } from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../../actions/authAction';
 
-const Navbar = () => {
+const Navbar = (props) => {
     const dispatch = useDispatch();
 
     return (
@@ -13,7 +13,7 @@ const Navbar = () => {
                 imgWidth={'70px'} 
                 imgHeight={'70px'}/>
             <NavbarTitle>Security Rabbit</NavbarTitle>
-            <LogoutBtn onClick={() => dispatch(logout)}>Log Out</LogoutBtn>
+            {props.noLogOut ? null : <LogoutBtn onClick={() => dispatch(logout)}>Log Out</LogoutBtn>}
         </NavbarContainer>
     )
 }

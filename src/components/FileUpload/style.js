@@ -4,9 +4,6 @@ export const PlaygroundGlobalStyle = createGlobalStyle`
 	body {
 		width: 100vw;
 		height: 100vh;
-		background: rgb(48,62,143);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
 		margin: 0;
 		padding: 0;
 		margin-bottom: 0;
