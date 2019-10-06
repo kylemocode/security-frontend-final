@@ -50,4 +50,12 @@ const FileTitle = (props) => {
     )
 }
 
+FileTitle.defaultProps = {
+    score: 0,
+    filePath: '',
+    hash: '',
+    fileSize: 0,
+    createTime: ''
+}
+
 export default FileTitle;

@@ -15,6 +15,7 @@ const FileDetail = (props) => {
 
     useEffect(() => {
         document.body.style.backgroundColor = "#FAFAFA";
+        window.scrollTo(0, 0)
         axios({
             method: 'get',
             url: `http://127.0.0.1:8000/api/FileInfo?fileID=${props.match.params.id}`,
@@ -56,5 +57,7 @@ const FileDetail = (props) => {
                 </div>
         )
 }
+
+
 
 export default FileDetail;
