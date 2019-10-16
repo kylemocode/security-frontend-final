@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const FileContent = ({className}) => {
-    return (
-        <div className={className}>
-            <p className="content_text">DETAILS</p>
-        </div>
-    )
-}
+const FileContent = React.memo(({ className }) => {
+  return (
+    <div className={className}>
+      <p className="content_text">DETAILS</p>
+    </div>
+  );
+});
 
 export default FileContent;
