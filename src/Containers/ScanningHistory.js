@@ -16,7 +16,7 @@ const ScanningHistory = props => {
     window.scrollTo(0, 0);
     axios({
       method: "get",
-      url: `http://127.0.0.1:8000/api/ScanningRecord?computerID=${props.match.params.id}`,
+      url: `http://140.119.19.21:8000/api/ScanningRecord?computerID=${props.match.params.id}`,
       headers: {
         Authorization: `Token ${token}`
       }
