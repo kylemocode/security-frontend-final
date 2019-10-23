@@ -11,11 +11,12 @@ const FileDetail = props => {
   const [scanFileInfo, setScanFileInfo] = useState({});
 
   useEffect(() => {
+    console.log(props.location.query.data[0]);
     document.body.style.backgroundColor = "#FAFAFA";
     window.scrollTo(0, 0);
     axios({
       method: "get",
-      url: `http://127.0.0.1:8000/api/FileInfo?fileID=1`,
+      url: `http://140.119.19.21:8000/api/FileInfo?fileID=1`,
       headers: {
         Authorization: `Token 2b184f072c98bf945ec1efe764d864d9c64348c2`
       }
