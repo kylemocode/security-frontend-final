@@ -17,14 +17,6 @@ import PropTypes from "prop-types";
 const ComputerInfo = props => {
   const [revealInfo, setRevealInfo] = useState(false);
 
-  // useEffect(() => {
-  //     let scatterDataList = [];
-  //     props.data.forEach((history) => {
-  //         scatterDataList.push({x:history.score, y:(new Date(history.end_time).getTime()-new Date(history.start_time).getTime())/1000})
-  //     })
-  //     setScatterData(scatterDataList);
-  // },[]);
-
   const colorPicker = val => {
     if (val < 4) {
       return "#55ed6c";

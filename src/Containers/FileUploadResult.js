@@ -9,9 +9,9 @@ import axios from "axios";
 const FileDetail = props => {
   const [computerInfo, setComputerInfo] = useState({});
   const [scanFileInfo, setScanFileInfo] = useState({});
-
+  const uploadIdentifier_id = localStorage.getItem("uploadIdentifier_id");
+  const uploadIdentifier_sha1 = localStorage.getItem("uploadIdentifier_sha1");
   useEffect(() => {
-    console.log(props.location.query.data[0]);
     document.body.style.backgroundColor = "#FAFAFA";
     window.scrollTo(0, 0);
     axios({
@@ -29,6 +29,7 @@ const FileDetail = props => {
   const containerStyle = {
     marginTop: "100px"
   };
+  
   return scanFileInfo.length ? (
     <div style={containerStyle}>
       <Navbar noLogOut={true} />
