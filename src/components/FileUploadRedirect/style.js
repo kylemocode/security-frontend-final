@@ -17,7 +17,7 @@ export const Message = styled.p`
   width: 40vw;
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
-  margin-top: -100px;
+  margin-top: -80px;
 `;
 
 export const StyledLink = styled.a`

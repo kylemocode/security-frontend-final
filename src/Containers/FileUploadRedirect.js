@@ -13,18 +13,22 @@ import { history } from "../routers/AppRouter";
 const FileUploadRedirect = props => {
   const { dispatch } = useContext(UploadContext);
   const [second, setSecond] = useState(30);
+
   useEffect(() => {
     document.body.style.backgroundColor = "white";
     dispatch(setHashId(props.data));
     const counter = setInterval(() => {
-      if (second < 0) {
-        history.push("/fileUploadResult");
-        return;
-      }
       setSecond(second => second - 1);
     }, 1000);
     return () => clearInterval(counter);
   }, []);
+
+  useEffect(() => {
+    if (second < 1) {
+      console.log("test");
+      history.push("/fileUploadResult");
+    }
+  }, [second]);
 
   return (
     <PageContainer>

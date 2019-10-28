@@ -7,7 +7,9 @@ import { StyledContent } from "../components/FileDetail/FileContent/style";
 import axios from "axios";
 
 const FileDetail = props => {
-  const [computerInfo, setComputerInfo] = useState({});
+  const identifierId = localStorage.getItem("uploadIdentifier_id");
+  const identifierSha1 = localStorage.getItem("uploadIdentifier_sha1");
+
   const [scanFileInfo, setScanFileInfo] = useState({});
   const uploadIdentifier_id = localStorage.getItem("uploadIdentifier_id");
   const uploadIdentifier_sha1 = localStorage.getItem("uploadIdentifier_sha1");
@@ -16,13 +18,13 @@ const FileDetail = props => {
     window.scrollTo(0, 0);
     axios({
       method: "get",
-      url: `http://140.119.19.21:8000/api/FileInfo?fileID=1`,
+      url: ` http://140.119.19.21:8000/result/${identifierSha1}_${identifierId}`,
       headers: {
         Authorization: `Token 2b184f072c98bf945ec1efe764d864d9c64348c2`
       }
     }).then(res => {
-      setComputerInfo(res.data[0]);
-      setScanFileInfo(res.data[2]);
+      
+      setScanFileInfo([res.data[0]]);
     });
   }, []);
 
@@ -30,11 +32,13 @@ const FileDetail = props => {
     marginTop: "100px"
   };
   
-  return scanFileInfo.length ? (
+  console.log(scanFileInfo)
+  
+  return !scanFileInfo.length ? (
     <div style={containerStyle}>
       <Navbar noLogOut={true} />
-
-      <FileTitle
+      <p>test</p>
+      {/* <FileTitle
         score={scanFileInfo[0].score}
         hash={scanFileInfo[0].file_hash_sha1}
         filePath={scanFileInfo[0].file_path}
@@ -43,12 +47,13 @@ const FileDetail = props => {
         data={scanFileInfo[0]}
       />
       <StyledContent />
-      <StyledData data={scanFileInfo} />
+      <StyledData data={scanFileInfo[0]} /> */}
     </div>
   ) : (
     <div style={containerStyle}>
       <Navbar />
       <Loader />
+      
     </div>
   );
 };

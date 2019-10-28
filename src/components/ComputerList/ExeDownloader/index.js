@@ -2,11 +2,7 @@ import React from "react";
 import { ExeContainer, DownloadBtn, DownloadHref } from "./style";
 
 const ExeDownloader = () => {
-  //   const downloadExe = () => {
-  //     axios
-  //       .get("http://140.119.19.21:8000/download_scanfile")
-  //       .then(() => console.log("download exe"));
-  //   };
+  
   return (
     <ExeContainer style={{ paddingBottom: "50px" }}>
       <div style={{ flex: "2.8" }}>
