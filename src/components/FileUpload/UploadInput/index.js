@@ -29,7 +29,7 @@ const UploadInput = () => {
       data.append("file", uploadFile);
       setUploading(true);
       axios
-        .post("http://140.119.19.21:8000/api/FileUpload", data, {
+        .post("http://localhost:8000/api/FileUpload", data, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Token 2b184f072c98bf945ec1efe764d864d9c64348c2`

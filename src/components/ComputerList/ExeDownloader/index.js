@@ -2,7 +2,6 @@ import React from "react";
 import { ExeContainer, DownloadBtn, DownloadHref } from "./style";
 
 const ExeDownloader = () => {
-  
   return (
     <ExeContainer style={{ paddingBottom: "50px" }}>
       <div style={{ flex: "2.8" }}>
@@ -28,10 +27,7 @@ const ExeDownloader = () => {
           應用程式來掃描電腦中的可執行檔，自行選擇掃描方式與範圍，立即取得大至整間企業小至一個執行檔的安全狀態與詳細資訊。
         </p>
         <DownloadBtn style={{ marginBottom: "35px" }}>
-          <DownloadHref
-            href="http://140.119.19.21:8000/download_scanfile"
-            download
-          >
+          <DownloadHref href="http://localhost:8000/download_scanfile" download>
             立即下載
           </DownloadHref>
         </DownloadBtn>

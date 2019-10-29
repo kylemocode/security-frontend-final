@@ -17,7 +17,7 @@ const FileDetail = props => {
     window.scrollTo(0, 0);
     axios({
       method: "get",
-      url: ` http://140.119.19.21:8000/result/${identifierSha1}_${identifierId}`,
+      url: ` http://localhost:8000/result/${identifierSha1}_${identifierId}`,
       headers: {
         Authorization: `Token 2b184f072c98bf945ec1efe764d864d9c64348c2`
       }

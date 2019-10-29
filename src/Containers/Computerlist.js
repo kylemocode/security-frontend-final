@@ -21,7 +21,7 @@ const Computerlist = props => {
     window.scrollTo(0, 0);
     axios({
       method: "get",
-      url: "http://140.119.19.21:8000/api/Computer",
+      url: "http://localhost:8000/api/Computer",
       headers: {
         Authorization: `Token ${token}`
       }

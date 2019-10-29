@@ -39,7 +39,7 @@ export const authLogin = (username, password) => {
   return dispatch => {
     dispatch(authStart());
     axios
-      .post("http://140.119.19.21:8000/auth/token/login", {
+      .post("http://localhost:8000/auth/token/login", {
         username,
         password
       })
