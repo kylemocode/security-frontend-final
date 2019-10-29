@@ -91,3 +91,7 @@ export default function SmallOutlinedChips(props) {
     </div>
   );
 }
+
+SmallOutlinedChips.defaultProps = {
+  packed: []
+}
