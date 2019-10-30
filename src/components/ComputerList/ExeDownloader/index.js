@@ -2,7 +2,6 @@ import React from "react";
 import { ExeContainer, DownloadBtn, DownloadHref } from "./style";
 
 const ExeDownloader = () => {
-  
   return (
     <ExeContainer style={{ paddingBottom: "50px" }}>
       <div style={{ flex: "2.8" }}>
