@@ -1,9 +1,9 @@
 FROM mhart/alpine-node:11 AS builder
 WORKDIR /app
 COPY package.json .
-RUN npm install
+RUN yarn install
 COPY . .
-RUN npm run build
+RUN yarn run build
 
 FROM mhart/alpine-node
 RUN yarn global add serve
