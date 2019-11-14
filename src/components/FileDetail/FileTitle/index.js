@@ -19,7 +19,7 @@ const FileTitle = props => {
     justifyContent: "center",
     alignItems: "center"
   };
-
+  console.log(typeof parseFloat(props.score));
   return (
     <div style={containerStyle}>
       <FileTitleContainer>
@@ -29,7 +29,7 @@ const FileTitle = props => {
               data={[
                 {
                   name: props.score,
-                  value: props.score
+                  value: parseFloat(props.score)
                 },
                 {
                   name: "Group B",

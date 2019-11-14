@@ -30,7 +30,6 @@ const FileDetail = props => {
     marginTop: "100px"
   };
 
-  console.log(scanFileInfo);
   return scanFileInfo != {} ? (
     <div style={containerStyle}>
       <Navbar noLogOut={true} />

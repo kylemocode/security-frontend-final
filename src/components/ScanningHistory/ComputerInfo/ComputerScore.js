@@ -92,6 +92,7 @@ export default class Example extends PureComponent {
   };
 
   render() {
+    console.log(this.props.data);
     return (
       <PieChart width={250} height={220}>
         <Pie
