@@ -34,7 +34,7 @@ const ScanningDetail = props => {
   let amountChartData = [];
   scanningFiles.forEach(file => {
     fileData.push([file.id, file.score, file.file_path]);
-    amountChartData.push(file.score);
+    amountChartData.push(Math.round(file.score));
   });
 
   const amountCounter = _.countBy(amountChartData);
