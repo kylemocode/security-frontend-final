@@ -45,7 +45,6 @@ const Computerlist = props => {
       setCompanyInfo(res.data[0][0]);
       setTotalScore(Math.round((score / res.data[1].length / 10) * 100));
     });
-    // .catch(err => history.push('/'))
   }, []);
   const containerStyle = {
     marginTop: "100px"
