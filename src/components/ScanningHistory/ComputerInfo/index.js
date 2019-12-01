@@ -59,7 +59,7 @@ const ComputerInfo = props => {
               data={[
                 {
                   name: props.computerInfo.latest_scan_score,
-                  value: props.computerInfo.latest_scan_score
+                  value: parseFloat(props.computerInfo.latest_scan_score)
                 },
                 {
                   name: "Group B",

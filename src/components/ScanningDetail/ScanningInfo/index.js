@@ -70,7 +70,7 @@ const ScanningInfo = props => {
               data={[
                 {
                   name: props.score,
-                  value: props.score
+                  value: parseFloat(props.score)
                 },
                 {
                   name: "Group B",

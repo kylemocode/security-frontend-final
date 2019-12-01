@@ -117,11 +117,11 @@ const FileData = props => {
         </div>
       ) : null}
       <div className="content__margin">
-        <p className="content__title">Singer</p>
+        <p className="content__title">Signer</p>
         <p className="content__body width_controller">{props.data[0].signer}</p>
       </div>
       <div className="content__margin">
-        <p className="content__title">Counter Singer</p>
+        <p className="content__title">Counter Signer</p>
         <p className="content__body width_controller">
           {props.data[0].counter_signer}
         </p>

@@ -16,6 +16,9 @@ const Computerlist = props => {
   const [totalScore, setTotalScore] = useState(0);
   const token = localStorage.getItem("token");
 
+  let safeNumTemp = 0;
+  let warningNumTemp = 0;
+  let dangerNumTemp = 0;
   useEffect(() => {
     document.body.style.backgroundColor = "#FAFAFA";
     window.scrollTo(0, 0);
@@ -27,25 +30,34 @@ const Computerlist = props => {
       }
     }).then(res => {
       let score = 0;
+
       res.data[1].forEach(computer => {
-        score += computer.latest_scan_score;
+        score += parseFloat(computer.latest_scan_score);
         switch (computer.last_scan_status) {
           case "Safe":
-            setSafeNum(safeNum + 1);
+            safeNumTemp++;
+
             break;
           case "Warning":
-            setWarningNum(warningNum + 1);
+            warningNumTemp++;
+
             break;
           case "Dangerous":
-            setDangerousNum(dangerousNum + 1);
+            dangerNumTemp++;
+
             break;
         }
       });
+
+      setSafeNum(safeNumTemp);
+      setWarningNum(warningNumTemp);
+      setDangerousNum(dangerNumTemp);
       setData(res.data[1]);
       setCompanyInfo(res.data[0][0]);
       setTotalScore(Math.round((score / res.data[1].length / 10) * 100));
     });
   }, []);
+
   const containerStyle = {
     marginTop: "100px"
   };
@@ -61,7 +73,6 @@ const Computerlist = props => {
       item.latest_scan_score,
       item.deviceName,
       item.userName,
-      item.ipAddr,
       item.processor,
       item.os
     ]);
@@ -108,7 +119,6 @@ const Computerlist = props => {
             "Latest Score",
             "Device Name",
             "User Name",
-            "IP Address",
             "Processor",
             "OS"
           ]}
