@@ -12,14 +12,19 @@ const FileData = props => {
             ? props.data[0].file_path.split("/").slice(-1)[0]
             : props.data[0].filename}
         </p>
-        <p className="content__body">
-          <span className="content__subtitle">File version: </span>
-          {props.data[0].file_version}
-        </p>
-        <p className="content__body">
-          <span className="content__subtitle">Prod version: </span>
-          {props.data[0].prod_version}
-        </p>
+        {props.data[0].file_version ? (
+          <p className="content__body">
+            <span className="content__subtitle">File version: </span>
+            {props.data[0].file_version}
+          </p>
+        ) : null}
+        {props.data[0].prod_version ? (
+          <p className="content__body">
+            <span className="content__subtitle">Prod version: </span>
+            {props.data[0].prod_version}
+          </p>
+        ) : null}
+
         <p className="content__body">
           <span className="content__subtitle">Entropy: </span>
           {props.data[0].entropy}
@@ -116,24 +121,36 @@ const FileData = props => {
           })}
         </div>
       ) : null}
-      <div className="content__margin">
-        <p className="content__title">Signer</p>
-        <p className="content__body width_controller">{props.data[0].signer}</p>
-      </div>
-      <div className="content__margin">
-        <p className="content__title">Counter Signer</p>
-        <p className="content__body width_controller">
-          {props.data[0].counter_signer}
-        </p>
-      </div>
-      <div className="content__margin">
-        <p className="content__title">Signed Date</p>
-        <p className="content__body">{props.data[0].signing_date}</p>
-      </div>
-      <div className="content__margin">
-        <p className="content__title">Packed</p>
-        <p className="content__body">{props.data[0].packed}</p>
-      </div>
+
+      {props.data[0].signer !== "[]" ? (
+        <div className="content__margin">
+          <p className="content__title">Signer</p>
+          <p className="content__body width_controller">
+            {props.data[0].signer}
+          </p>
+        </div>
+      ) : null}
+
+      {props.data[0].counter_signer !== "[]" ? (
+        <div className="content__margin">
+          <p className="content__title">Counter Signer</p>
+          <p className="content__body width_controller">
+            {props.data[0].counter_signer}
+          </p>
+        </div>
+      ) : null}
+      {props.data[0].signing_date ? (
+        <div className="content__margin">
+          <p className="content__title">Signed Date</p>
+          <p className="content__body">{props.data[0].signing_date}</p>
+        </div>
+      ) : null}
+      {props.data[0].packed ? (
+        <div className="content__margin">
+          <p className="content__title">Packed</p>
+          <p className="content__body">{props.data[0].packed}</p>
+        </div>
+      ) : null}
     </div>
   );
 };
