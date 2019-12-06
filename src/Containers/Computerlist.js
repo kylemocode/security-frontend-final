@@ -77,7 +77,8 @@ const Computerlist = props => {
       item.os
     ]);
   });
-  return data ? (
+
+  return data.length ? (
     <div style={containerStyle}>
       <Navbar />
       <div style={flexCenterStyle}>
@@ -93,6 +94,7 @@ const Computerlist = props => {
           <CompanyCard
             computerNum={data.length}
             companyName={companyInfo.companyName}
+            companyURL={companyInfo.companyURL}
           />
           <ExeDownloader />
         </div>
