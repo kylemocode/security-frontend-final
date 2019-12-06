@@ -32,7 +32,7 @@ const UploadInput = () => {
         .post("http://140.119.19.21:8000/api/FileUpload", data, {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: `Token 24f87f255fa6c5aa64dbdbb50f1467eb0c5f99e6`
+            Authorization: `Token 82b830f833e90a11197a97df56dddc3d7aa55c06`
           }
         })
         .then(res => {

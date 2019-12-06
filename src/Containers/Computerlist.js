@@ -77,7 +77,7 @@ const Computerlist = props => {
       item.os
     ]);
   });
-  return data.length ? (
+  return data ? (
     <div style={containerStyle}>
       <Navbar />
       <div style={flexCenterStyle}>

@@ -42,7 +42,7 @@ const ScanningHistory = props => {
       item.customized_option.toString()
     ]);
   });
-  return data.length ? (
+  return data ? (
     <div style={containerStyle}>
       <Navbar />
       <BreadCrumb currentLayer1={true} />
